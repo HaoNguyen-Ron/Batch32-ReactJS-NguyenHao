@@ -154,6 +154,7 @@ function PlayList(props) {
                     file={selectedMusic.file}
                     onNext={onNext} 
                     onPrev={onPrev}
+                    
                 />
             </div>
         </div>

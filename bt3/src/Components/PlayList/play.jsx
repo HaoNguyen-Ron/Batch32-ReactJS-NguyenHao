@@ -8,7 +8,7 @@ import React, { useCallback, useEffect, useRef, useState } from 'react';
 import './music.css';
 
 
-export default function Play({ title, artist, image, file, id, onPrev, onNext }){
+export default function Play({ title, artist, image, file, id, onPrev, onNext, onNextMusic }){
 
     const [isPlaying, setIsPlaying] = useState(false);
 
@@ -92,6 +92,7 @@ export default function Play({ title, artist, image, file, id, onPrev, onNext })
                         type="audio/mpeg" 
                         ref={audioRef} 
                         onTimeUpdate={onUpdateTimer}
+                        onEnded={onNextMusic}
                     />
 
 
