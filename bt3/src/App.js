@@ -1,26 +1,28 @@
 import React , { useState } from 'react';
 import './App.css';
 // import PlayList from './Components/PlayList';
-import LikeButton from 'Components/Like button';
+// import LikeButton from 'Components/Like button';
 import Accordion from 'Components/Accordion';
+// import Form from 'Components/Form';
 
 function App() { // = Home Page
-const [classes,setclasses] = useState('bg-black')
+// const [classes,setclasses] = useState('bg-black')
 
-const onclickToLike = () =>{
-    setclasses('new-style')
-}
+// const onclickToLike = () =>{
+//     setclasses('new-style')
+// }
   return (
     <div className="container">
 
-      <LikeButton
+      {/* <LikeButton
       icon={<i class="fa-solid fa-heart fa-xl" />}
       name="Like"
       classes={classes}
       onclickToLike = {onclickToLike}
       />
-      <br />
+      <br /> */}
       <Accordion />
+      {/* <Form /> */}
     </div>
 
       // <PlayList />

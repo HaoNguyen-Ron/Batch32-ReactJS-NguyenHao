@@ -37,7 +37,7 @@ function List({musics,onSelectMuics, selectedId, onLikedMusic, selectedHeart}) {
                             <div className="col-3 d-flex align-items-center">
                                 <span className="name-icon"> 
                                 {
-                                    selectedId=== music.id
+                                    selectedId === music.id
                                     ? <i className="fa-solid fa-volume-high volume-icon"></i>
                                     : <i className="fa-solid fa-caret-right"></i>   
                                 }
