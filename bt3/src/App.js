@@ -1,9 +1,10 @@
-import React , { useState } from 'react';
+import React from 'react';
 import './App.css';
 // import PlayList from './Components/PlayList';
 // import LikeButton from 'Components/Like button';
-import Accordion from 'Components/Accordion';
+// import Carousel from 'Components/Carousel';
 // import Form from 'Components/Form';
+import Form2 from 'Components/Form-Ex';
 
 function App() { // = Home Page
 // const [classes,setclasses] = useState('bg-black')
@@ -21,8 +22,9 @@ function App() { // = Home Page
       onclickToLike = {onclickToLike}
       />
       <br /> */}
-      <Accordion />
+      {/* <Carousel /> */}
       {/* <Form /> */}
+      <Form2 />
     </div>
 
       // <PlayList />

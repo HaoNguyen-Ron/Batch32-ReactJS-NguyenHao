@@ -1,14 +1,14 @@
 import { useState } from 'react';
-import './accordion.css'
+import './carousel.css'
 
-const Accordion = () => {
+const Carousel = () => {
     const sliceImg =[
         // {scr : 'Asset/Image/Capture.PNG'},
         // {scr : 'Asset/Image/Capture1.PNG'},
         // {scr : 'Asset/Image/Capture2.PNG'},
         // {scr : 'Asset/Image/Capture3.PNG'},
         // {scr : 'Asset/Image/Capture4.PNG'},
-        // {scr : 'Asset/Image/Capture5.PNG'},
+        // {scr : 'Asset/Image/Capture5.PNG'},  
         // {scr : 'Asset/Image/Capture6.PNG'}
         <img className='img-fluid' src={require('Asset/Image/Capture.PNG')} alt="" />,
         <img className='img-fluid' src={require('Asset/Image/Capture1.PNG')} alt="" />,
@@ -30,8 +30,8 @@ const Accordion = () => {
     };
     
     return (
-            <div className="accordion-wrapper">
-                <div className="accordion-slice">
+            <div className="carousel-wrapper">
+                <div className="carousel-slice">
                     {indexImg}
                 </div>
                 <div className="prevSlider">
@@ -44,4 +44,4 @@ const Accordion = () => {
     );
 }
  
-export default Accordion;
+export default Carousel;

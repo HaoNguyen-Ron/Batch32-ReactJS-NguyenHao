@@ -1,15 +1,15 @@
-.accordion-wrapper{
+.carousel-wrapper{
     background-color: #F75354;
     padding: 20px 10px;
     margin-bottom: 30px;
 }
-.accordion-slice{
+.carousel-slice{
     display: flex;
     justify-content: center;
     align-items: center;
     position: relative;
 }
-.accordion-slice img{
+.carousel-slice img{
     width: 100%;
     height: auto;
 }
