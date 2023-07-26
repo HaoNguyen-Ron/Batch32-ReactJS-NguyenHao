@@ -5,7 +5,7 @@ const InputGroup = ({
     name,
     value,
     placeholder = "Please type in here",
-    onChange
+    onchange
 }) => {
     
     return (

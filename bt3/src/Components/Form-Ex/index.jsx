@@ -4,21 +4,38 @@ import InputGroup from './inputGroup';
 import './form2.css'
 
 const Form2 = () => {
-    const [user, setUser] = useState({
-        firstName:'',
-        lastName:'',
-        password:'' 
-    });
+    // const [user, setUser] = useState({
+    //     firstName:'',
+    //     lastName:'',
+    //     email:'',
+    //     password:'' 
+    // });
+    const [firstName, setFirstName] = useState('');
+    const [lastName, setLastName] = useState('');
+    const [email, setemail] = useState('');
+    const [password, setPassword] = useState('');
+  
+
     const onSubmitForm = (e) =>{
         e.preventDefault();
-        console.log('««««« onSubmitForm »»»»»', onSubmitForm);
+        alert('submited')
     };
-    const onchange = (value, name) =>{
-        setUser((prevState) => ({
-            ...prevState,
-            [name]: value,
-        }))
-    };
+    const onchangeFirstName = (e) =>{
+        setFirstName(e.target.value)
+    }
+    const onchangeLastName = (e) =>{
+        setLastName(e.target.value)
+    }
+    const onchangeEmail = (e) =>{
+        setemail(e.target.value)
+    }
+    const onchangePass = (e) =>{
+        setPassword(e.target.value)
+    }
+
+
+
+    
 
     return (
         <div>
@@ -26,7 +43,7 @@ const Form2 = () => {
                     <nav className="navbar navbar-expand-lg bg-body-tertiary">
                         <div className="container-fluid">
                             <div className="logo-wrap">
-                                <i class="fa-solid fa-circle" />
+                                <i className="fa-solid fa-circle" />
                                 <a className="navbar-brand" href="#">
                                     Anywhere app
                                 </a>
@@ -78,44 +95,36 @@ const Form2 = () => {
                     </div>
 
                     <div className="form-wrap">
-                        <form onSubmit={onSubmitForm}> 
+                        <form  onSubmit={onSubmitForm}> 
                             <div className="user-name">
                                 <InputGroup 
                                     label = 'First Name'
-                                    name = 'FirstName'
-                                    value = {user.firstName}
-                                    onchange = {onchange}
+                                    name = 'firstName'
+                                    value = {firstName}
+                                    onchange = {onchangeFirstName}
                                 />
 
                                 <InputGroup 
                                     label = 'Last Name'
-                                    name = 'LastName'
-                                    value = {user.lastName}
-                                    onchange = {onchange}
+                                    name = 'lastName'
+                                    value = {lastName}
+                                    onchange = {onchangeLastName}
                                 />
                             </div>
 
                             <InputGroup 
                                     label = 'Email'
-                                    name = 'Email'
-                                    value = {user.email}
-                                    onchange = {onchange}
+                                    name = 'email'
+                                    value = {email}
+                                    onchange = {onchangeEmail}
                             />
 
                             <InputGroup 
                                     label = 'Password'
                                     name = 'Password'
-                                    type='password'
-                                    value = {user.password}
-                                    onchange = {onchange}
-                            />
-
-                            <InputGroup 
-                                    label = 'Re-confirm Password'
-                                    name = 'Confirm'
-                                    type='password'
-                                    value = {user.password}
-                                    onchange = {onchange}
+                                    type = 'password'
+                                    value = {password}
+                                    onchange = {onchangePass}
                             />
                         </form>
                         <button onClick={onSubmitForm}>Submit</button>
