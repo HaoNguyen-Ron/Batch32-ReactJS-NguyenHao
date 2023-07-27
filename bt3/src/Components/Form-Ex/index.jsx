@@ -3,39 +3,86 @@ import InputGroup from './inputGroup';
 
 import './form2.css'
 
+const inputs = [
+    {
+        id:1,
+        name:'firstName',
+        type:'text',
+        label:'First Name',
+        error:'First name only contains 3-12 characters and none special characters or number'
+    },
+    {
+        id:2,
+        name:'lastName',
+        type:'text',
+        label:'Last Name',
+        error:'Last name only contains 3-12 characters and none special characters or number'
+    },
+    {
+        id:3,
+        name:'email',
+        type:'text',
+        label:'Email',
+        error:'It must be a valid email'
+    },
+    {
+        id:4,
+        name:'password',
+        type:'password',
+        label:'Password',
+        error:'Password must contains 3-12 characters, one special characters and a number'
+    },
+    {
+        id:5,
+        name:'confirmPassword',
+        type:'password',
+        label:'confirmPassword',
+        error:'Password does not match'
+    },
+]
+
 const Form2 = () => {
-    // const [user, setUser] = useState({
-    //     firstName:'',
-    //     lastName:'',
-    //     email:'',
-    //     password:'' 
-    // });
-    const [firstName, setFirstName] = useState('');
-    const [lastName, setLastName] = useState('');
-    const [email, setemail] = useState('');
-    const [password, setPassword] = useState('');
+    // const [firstName, setFirstName] = useState('');
+    // const [lastName, setLastName] = useState('');
+    // const [email, setemail] = useState('');
+    // const [password, setPassword] = useState('');
+    const [error,setError] = useState([]);
+    const [user, setUser] = useState({
+        firstName:'',
+        lastName:'',
+        email:'',
+        password:''
+    });
+    console.log('««««« user »»»»»', user);
   
 
     const onSubmitForm = (e) =>{
         e.preventDefault();
-        alert('submited')
     };
-    const onchangeFirstName = (e) =>{
-        setFirstName(e.target.value)
-    }
-    const onchangeLastName = (e) =>{
-        setLastName(e.target.value)
-    }
-    const onchangeEmail = (e) =>{
-        setemail(e.target.value)
-    }
-    const onchangePass = (e) =>{
-        setPassword(e.target.value)
-    }
+
+    const onchangeInput = (e) =>{
+        setUser((prevState) =>({
+            ...prevState,
+            [e.target.name]: e.target.value,
+        }))
+    };
 
 
+    // const onchangeFirstName = (e) =>{
+    //     setFirstName(e.target.value)
+    // };
 
-    
+    // const onchangeLastName = (e) =>{
+    //     setLastName(e.target.value)
+    // };
+
+    // const onchangeEmail = (e) =>{
+    //     setemail(e.target.value)
+    // };
+
+    // const onchangePass = (e) =>{
+    //     setPassword(e.target.value)
+    // };
 
     return (
         <div>
@@ -96,7 +143,32 @@ const Form2 = () => {
 
                     <div className="form-wrap">
                         <form  onSubmit={onSubmitForm}> 
-                            <div className="user-name">
+                            {inputs.map(input =>(
+                                <>
+                                {/* <div className="user-name">
+                                    <InputGroup 
+                                    key={input[0].id} {...input}
+                                    value={inputs[input.name]}
+                                    onchange={onchangeInput}
+                                    />
+
+                                    <InputGroup 
+                                    key={input[1].id} {...input}
+                                    value={inputs[input.name]}
+                                    onchange={onchangeInput}
+                                    />
+                                </div> */}
+
+                                <InputGroup 
+                                key={input.id}
+                                label={input.label}
+                                value={input[input.name]}
+                                onchange={onchangeInput}
+                                error={input.error}
+                                />
+                                </>
+                            ))}
+                            {/* <div className="user-name">
                                 <InputGroup 
                                     label = 'First Name'
                                     name = 'firstName'
@@ -125,9 +197,9 @@ const Form2 = () => {
                                     type = 'password'
                                     value = {password}
                                     onchange = {onchangePass}
-                            />
+                            /> */}
                         </form>
-                        <button onClick={onSubmitForm}>Submit</button>
+                        <button className='submitbtn' onClick={onSubmitForm}>Create account</button>
                     </div>
                 </div>
             </main>

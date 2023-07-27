@@ -1,5 +1,8 @@
 import "./inputGroup.css";
 const InputGroup = ({
+    icon,
+    error,
+    id,
     label,
     type = 'text',
     name,
@@ -14,7 +17,7 @@ const InputGroup = ({
                 {label}:
             </label>
             <input
-                id="exampleFormControlInput1"
+                id={`exampleFormControlInput1 ${id}`}
                 type={type}
                 placeholder={placeholder}
                 name={name}
@@ -23,6 +26,10 @@ const InputGroup = ({
                 // onBlur={validation.handleBlur}
                 // className={`form-control ${isValid ? "" : "is-invalid"}`}
             />
+            <span>
+                {icon}
+            </span>
+            <p className="d-error">{error}</p>
         </div>
     );
 };
