@@ -9,35 +9,48 @@ const inputs = [
         name:'firstName',
         type:'text',
         label:'First Name',
-        error:'First name only contains 3-12 characters and none special characters or number'
+        error:'First name only contains 3-12 characters and none special characters or number',
+        pattern: "/^(?=.{1,50}$)[a-z]+(?:['_.\s][a-z]+)*$/i",
+        icon: <i className="fa-solid fa-address-card"></i>,
+        required: true,
     },
     {
         id:2,
         name:'lastName',
         type:'text',
         label:'Last Name',
-        error:'Last name only contains 3-12 characters and none special characters or number'
+        error:'Last name only contains 3-12 characters and none special characters or number',
+        pattern: "/^(?=.{1,50}$)[a-z]+(?:['_.\s][a-z]+)*$/i",
+        icon: <i className="fa-solid fa-address-card"></i>,
+        required: true,
     },
     {
         id:3,
         name:'email',
-        type:'text',
+        type:'email',
         label:'Email',
-        error:'It must be a valid email'
+        error:'It must be a valid email',
+        icon: <i className="fa-solid fa-envelope-open-text"></i>,
+        required: true
     },
     {
         id:4,
         name:'password',
         type:'password',
         label:'Password',
-        error:'Password must contains 3-12 characters, one special characters and a number'
+        error:'Password must contains 3-12 characters, one special characters and a number',
+        icon: <i className="fa-solid fa-eye"></i>,
+        required: true,
+        pattern:`(?=^.{8,}$)((?=.*\d)|(?=.*\W+))(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$"`
     },
     {
         id:5,
         name:'confirmPassword',
         type:'password',
         label:'confirmPassword',
-        error:'Password does not match'
+        error:'Password does not match',
+        icon: <i className="fa-solid fa-eye"></i>,
+        required: true
     },
 ]
 
@@ -58,6 +71,7 @@ const Form2 = () => {
 
     const onSubmitForm = (e) =>{
         e.preventDefault();
+        setError(validation(user));
     };
 
     const onchangeInput = (e) =>{
@@ -67,6 +81,9 @@ const Form2 = () => {
         }))
     };
 
+    const validation = (values) => {
+        
+    }
 
     // const onchangeFirstName = (e) =>{
     //     setFirstName(e.target.value)
@@ -161,10 +178,11 @@ const Form2 = () => {
 
                                 <InputGroup 
                                 key={input.id}
-                                label={input.label}
-                                value={input[input.name]}
+                                {...input}
+                                value={user[input.name]}
                                 onchange={onchangeInput}
                                 error={input.error}
+                                icon={input.icon}
                                 />
                                 </>
                             ))}

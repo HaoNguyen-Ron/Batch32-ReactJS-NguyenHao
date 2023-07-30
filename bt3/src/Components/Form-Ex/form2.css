@@ -61,3 +61,14 @@ p {
 #navbarNav .navbar-nav li{
     margin: 0 40px;
 }
+
+.d-error{
+    font-size: 12px;
+    padding: 3px;
+    color: red;
+    display: none;
+}
+
+input:invalid~.d-error{
+    display: block;
+}

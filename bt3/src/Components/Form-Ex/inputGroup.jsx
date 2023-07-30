@@ -23,13 +23,14 @@ const InputGroup = ({
                 name={name}
                 value={value}
                 onChange={onchange}
+                required
                 // onBlur={validation.handleBlur}
                 // className={`form-control ${isValid ? "" : "is-invalid"}`}
             />
             <span>
                 {icon}
             </span>
-            <p className="d-error">{error}</p>
+            <span className="d-error">{error}</span>
         </div>
     );
 };
