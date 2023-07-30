@@ -1,0 +1,74 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #e9e4e4 !important;
+}
+
+.container {
+    width: 1440px;
+    margin: 0 auto;
+}
+
+a {
+    text-decoration: none;
+}
+
+ul,
+ol {
+    list-style-type: none;
+    text-decoration: none;
+}
+
+p {
+    margin-bottom: 0 !important;
+}
+
+.navbar .container-fluid {
+    display: flex;
+    margin: 0 30px;
+}
+
+:root{
+    --main-font-color:#268FEB;
+}
+
+/* logo part */
+.logo-wrap{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.logo-wrap a{
+    font-size: 30px;
+    font-weight: 700;
+}
+.logo-wrap a::after{
+    content: '.';
+    color: var(--main-font-color);
+}
+.logo-wrap i{
+    font-size: 40px;
+    margin-right: 20px;
+    color: var(--main-font-color);
+}
+#navbarNav{
+    margin-left: 20px;
+}
+#navbarNav .navbar-nav li{
+    margin: 0 40px;
+}
+
+.d-error{
+    font-size: 12px;
+    padding: 3px;
+    color: red;
+    display: none;
+}
+
+input:invalid~.d-error{
+    display: block;
+}
