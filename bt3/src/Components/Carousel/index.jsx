@@ -10,35 +10,42 @@ const Carousel = () => {
         // {scr : 'Asset/Image/Capture4.PNG'},
         // {scr : 'Asset/Image/Capture5.PNG'},  
         // {scr : 'Asset/Image/Capture6.PNG'}
-        <img className='img-fluid' src={require('Asset/Image/Capture.PNG')} alt="" />,
-        <img className='img-fluid' src={require('Asset/Image/Capture1.PNG')} alt="" />,
-        <img className='img-fluid' src={require('Asset/Image/Capture2.PNG')} alt="" />,
-        <img className='img-fluid' src={require('Asset/Image/Capture3.PNG')} alt="" />,
-        <img className='img-fluid' src={require('Asset/Image/Capture4.PNG')} alt="" />,
-        <img className='img-fluid' src={require('Asset/Image/Capture5.PNG')} alt="" />,
-        <img className='img-fluid' src={require('Asset/Image/Capture6.PNG')} alt="" />,
+        require('Asset/Image/Capture.PNG'),
+        require('Asset/Image/Capture1.PNG'),
+        require('Asset/Image/Capture2.PNG'),
+        require('Asset/Image/Capture3.PNG'),
+        require('Asset/Image/Capture4.PNG'),
+        require('Asset/Image/Capture5.PNG'),
+        require('Asset/Image/Capture6.PNG'),
     ];
-    const [indexImg,setindexImg]= useState(sliceImg[0]);
+    const [indexImg,setindexImg]= useState(0);
 
-    const prePic = () =>{
-        const currentIndexImg = sliceImg.findIndex(image => image.src = indexImg.src)
-        if (currentIndexImg === 0){
-            setindexImg(sliceImg[sliceImg.length - 1])
+    const prePic = () => {
+        if (indexImg -1 >= 0){
+            setindexImg((prev) => prev - 1)
         } else {
-            setindexImg(sliceImg[currentIndexImg - 1])
+            setindexImg(sliceImg.length -1)
         }
     };
+
+    const nextPic = () => {
+        if (indexImg + 1  < sliceImg.length) {
+            setindexImg((prev) => prev + 1)
+        } else {
+            setindexImg(0)
+        }
+      }
     
     return (
             <div className="carousel-wrapper">
                 <div className="carousel-slice">
-                    {indexImg}
+                    <img className='img-fluid' src={sliceImg[indexImg]} alt="" />
                 </div>
                 <div className="prevSlider">
                     <i className="fa-solid fa-chevron-left" onClick={prePic}></i>
                 </div>
                 <div className="nextSlider">
-                    <i className="fa-solid fa-chevron-right" ></i>
+                    <i className="fa-solid fa-chevron-right" onClick={nextPic}></i>
                 </div>
             </div>
     );
