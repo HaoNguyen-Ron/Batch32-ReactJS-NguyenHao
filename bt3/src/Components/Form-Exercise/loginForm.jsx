@@ -1,5 +1,8 @@
 import { useState } from 'react';
-import InputGroup from './inputGroup';
+import { useFormik } from 'formik';
+import * as Yup from 'yup';
+
+import InputGroup2 from './inputGroup2';
 
 import './form2.css'
 
@@ -8,59 +11,54 @@ const LoginForm = () => {
     // const [lastName, setLastName] = useState('');
     // const [email, setemail] = useState('');
     // const [password, setPassword] = useState('');
-    const [icon, setIcon] = useState()
-    const [user, setUser] = useState({
-        firstName:'',
-        lastName:'',
-        email:'',
-        password:''
+    const validation  = useFormik({
+        initialValues:{
+            userName :'',
+            email:'',
+            password:''
+        },
+        validationSchema: Yup.object({
+            userName: Yup.string()
+                .min(6,'Minimum 6 characters')
+                .max(12, 'Maximum 12 characters')
+                .required('Username is required!'),
+            email: Yup.string()
+                .email('Invalid email')
+                .required('Email is required'),
+            password: Yup.string()
+                .min(6, 'Minimum 6 characters')
+                .max(12, 'Minimum 12 characters')
+                .required('Password is required!'),
+        }),
+        onSubmit: (values) => {
+            console.log('««««« values »»»»»', values);
+        },
     });
-    console.log('««««« user »»»»»', user);
+    console.log(validation.errors);
     const inputs = [
         {
             id:1,
             name:'userName',
             type:'text',
-            label:'Username',
-            error:'First name must contains 12 characters, number and none special characters',
-            pattern: "^[a-zA-Z][a-zA-Z]+$",
+            label:'User name',
             icon: <i className="fa-solid fa-address-card"></i>,
-            required: true,
         },
         {
             id:2,
             name:'email',
             type:'email',
             label:'Email',
-            error:'It must be a valid email',
             icon: <i className="fa-solid fa-envelope-open-text"></i>,
-            required: true
         },
         {
             id:3,
             name:'password',
             type:'password',
             label:'Password',
-            error:'Password must contains 6-12 characters, one uppercased character, one special characters and a number',
             icon: <i className="fa-solid fa-eye"></i>,
-            required: true,
-            pattern:`^(?=.*[0-9])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{6,16}$`,
-            isShow: false
         }
     ]
   
-
-    const onLogin = (e) =>{
-        e.preventDefault();
-    };
-
-    const onchangeInput = (e) =>{
-        setUser((prevState) =>({
-            ...prevState,
-            [e.target.name]: e.target.value,
-        }))
-    };
-
     // const handleShowPassword = () =>{
     //     {user.isShow
     //         ? setIcon(<i class="fa-solid fa-eye-slash"></i>)
@@ -136,7 +134,7 @@ const LoginForm = () => {
                     </div>
 
                     <div className="form-wrap">
-                        <form  onSubmit={onLogin}> 
+                        <form> 
                             {inputs.map(input =>(
                                 <>
                                 {/* <div className="user-name">
@@ -153,14 +151,13 @@ const LoginForm = () => {
                                     />
                                 </div> */}
 
-                                <InputGroup 
+                                <InputGroup2 
                                 key={input.id}
                                 {...input}
-                                value={user[input.name]}
-                                onchange={onchangeInput}
-                                error={input.error}
+                                value={inputs[input.name]}
                                 icon={input.icon}
-                                pattern={input.pattern}
+                                formix = {onchange}
+                                validation={validation}
                                 />
                                 </>
                             ))}
@@ -195,7 +192,7 @@ const LoginForm = () => {
                                     onchange = {onchangePass}
                             /> */}
                         </form>
-                        <button className='loginBtn' onClick={onLogin}>Login</button>
+                        <button onClick={validation.handleSubmit} className='loginBtn'>Login</button>
                         <h4>
                             You are new here?
                             <span className='login-title'> <a href="">Create new account</a></span>
