@@ -3,7 +3,7 @@ import InputGroup from './inputGroup';
 
 import './form2.css'
 
-const Form2 = () => {
+const RegisterForm = () => {
     // const [firstName, setFirstName] = useState('');
     // const [lastName, setLastName] = useState('');
     // const [email, setemail] = useState('');
@@ -230,4 +230,4 @@ const Form2 = () => {
     );
 };
 
-export default Form2;
+export default RegisterForm;

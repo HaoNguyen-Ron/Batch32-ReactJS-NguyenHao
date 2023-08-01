@@ -3,63 +3,12 @@ import InputGroup from './inputGroup';
 
 import './form2.css'
 
-const inputs = [
-    {
-        id:1,
-        name:'firstName',
-        type:'text',
-        label:'First Name',
-        error:'First name only contains 3-12 characters and none special characters or number',
-        pattern: "/^(?=.{1,50}$)[a-z]+(?:['_.\s][a-z]+)*$/i",
-        icon: <i className="fa-solid fa-address-card"></i>,
-        required: true,
-    },
-    {
-        id:2,
-        name:'lastName',
-        type:'text',
-        label:'Last Name',
-        error:'Last name only contains 3-12 characters and none special characters or number',
-        pattern: "/^(?=.{1,50}$)[a-z]+(?:['_.\s][a-z]+)*$/i",
-        icon: <i className="fa-solid fa-address-card"></i>,
-        required: true,
-    },
-    {
-        id:3,
-        name:'email',
-        type:'email',
-        label:'Email',
-        error:'It must be a valid email',
-        icon: <i className="fa-solid fa-envelope-open-text"></i>,
-        required: true
-    },
-    {
-        id:4,
-        name:'password',
-        type:'password',
-        label:'Password',
-        error:'Password must contains 3-12 characters, one special characters and a number',
-        icon: <i className="fa-solid fa-eye"></i>,
-        required: true,
-        pattern:`(?=^.{8,}$)((?=.*\d)|(?=.*\W+))(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$"`
-    },
-    {
-        id:5,
-        name:'confirmPassword',
-        type:'password',
-        label:'confirmPassword',
-        error:'Password does not match',
-        icon: <i className="fa-solid fa-eye"></i>,
-        required: true
-    },
-]
-
-const Form2 = () => {
+const LoginForm = () => {
     // const [firstName, setFirstName] = useState('');
     // const [lastName, setLastName] = useState('');
     // const [email, setemail] = useState('');
     // const [password, setPassword] = useState('');
-    const [error,setError] = useState([]);
+    const [icon, setIcon] = useState()
     const [user, setUser] = useState({
         firstName:'',
         lastName:'',
@@ -67,11 +16,42 @@ const Form2 = () => {
         password:''
     });
     console.log('««««« user »»»»»', user);
+    const inputs = [
+        {
+            id:1,
+            name:'userName',
+            type:'text',
+            label:'Username',
+            error:'First name must contains 12 characters, number and none special characters',
+            pattern: "^[a-zA-Z][a-zA-Z]+$",
+            icon: <i className="fa-solid fa-address-card"></i>,
+            required: true,
+        },
+        {
+            id:2,
+            name:'email',
+            type:'email',
+            label:'Email',
+            error:'It must be a valid email',
+            icon: <i className="fa-solid fa-envelope-open-text"></i>,
+            required: true
+        },
+        {
+            id:3,
+            name:'password',
+            type:'password',
+            label:'Password',
+            error:'Password must contains 6-12 characters, one uppercased character, one special characters and a number',
+            icon: <i className="fa-solid fa-eye"></i>,
+            required: true,
+            pattern:`^(?=.*[0-9])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{6,16}$`,
+            isShow: false
+        }
+    ]
   
 
-    const onSubmitForm = (e) =>{
+    const onLogin = (e) =>{
         e.preventDefault();
-        setError(validation(user));
     };
 
     const onchangeInput = (e) =>{
@@ -81,9 +61,12 @@ const Form2 = () => {
         }))
     };
 
-    const validation = (values) => {
-        
-    }
+    // const handleShowPassword = () =>{
+    //     {user.isShow
+    //         ? setIcon(<i class="fa-solid fa-eye-slash"></i>)
+    //         : setIcon(<i className="fa-solid fa-eye"></i>)
+    //     }
+    // }
 
     // const onchangeFirstName = (e) =>{
     //     setFirstName(e.target.value)
@@ -102,9 +85,9 @@ const Form2 = () => {
     // };
 
     return (
-        <div>
+        <div className='form-background'>
             <header>
-                    <nav className="navbar navbar-expand-lg bg-body-tertiary">
+                    <nav className="navbar navbar-expand-lg">
                         <div className="container-fluid">
                             <div className="logo-wrap">
                                 <i className="fa-solid fa-circle" />
@@ -128,7 +111,7 @@ const Form2 = () => {
                             <div className="collapse navbar-collapse" id="navbarNav">
                                 <ul className="navbar-nav">
                                     <li className="nav-item">
-                                        <a className="nav-link active " aria-current="page" href="#">
+                                        <a className="nav-link " aria-current="page" href="#">
                                             Home
                                         </a>
                                     </li>
@@ -147,19 +130,13 @@ const Form2 = () => {
             <main>
                 <div className="form-container">
                     <div className="title">
-                        <h2>START FOR FREE</h2>
+                        <h4>WELCOME TO</h4>
 
-                        <h1 className='greeting-title'>Create new account</h1>
-
-                        <h2>
-                            Already A member?
-
-                            <span className='Login-title'>Log in</span>
-                        </h2>
+                        <h1 className='greeting-title'>The app</h1>
                     </div>
 
                     <div className="form-wrap">
-                        <form  onSubmit={onSubmitForm}> 
+                        <form  onSubmit={onLogin}> 
                             {inputs.map(input =>(
                                 <>
                                 {/* <div className="user-name">
@@ -183,6 +160,7 @@ const Form2 = () => {
                                 onchange={onchangeInput}
                                 error={input.error}
                                 icon={input.icon}
+                                pattern={input.pattern}
                                 />
                                 </>
                             ))}
@@ -217,7 +195,11 @@ const Form2 = () => {
                                     onchange = {onchangePass}
                             /> */}
                         </form>
-                        <button className='submitbtn' onClick={onSubmitForm}>Create account</button>
+                        <button className='loginBtn' onClick={onLogin}>Login</button>
+                        <h4>
+                            You are new here?
+                            <span className='login-title'> <a href="">Create new account</a></span>
+                        </h4>
                     </div>
                 </div>
             </main>
@@ -225,4 +207,4 @@ const Form2 = () => {
     );
 };
 
-export default Form2;
+export default LoginForm;

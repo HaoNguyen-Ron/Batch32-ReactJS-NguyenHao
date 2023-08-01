@@ -8,6 +8,16 @@
     border-radius: 20px;
     padding: 10px 30px;
 }
+.loginBtn{
+    background-color: var(--main-font-color);
+    color: white;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    border: 0;
+    border-radius: 20px;
+    padding: 10px 30px;
+    margin-right: 20px;
+}
 .input-warp{
     width: 50%;
     border: 1px solid #333645;

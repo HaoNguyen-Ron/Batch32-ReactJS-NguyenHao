@@ -1,8 +1,9 @@
 import React from 'react';
 import './App.css';
+import LoginForm from 'Components/Form-Exercise/loginForm';
 // import PlayList from './Components/PlayList';
 // import LikeButton from 'Components/Like button';
-import Carousel from 'Components/Carousel';
+// import Carousel from 'Components/Carousel';
 // import Form from 'Components/Form';
 // import Form2 from 'Components/Form-Exercise';
 // import Accordions from 'Components/Accordion';
@@ -23,10 +24,11 @@ function App() { // = Home Page
       onclickToLike = {onclickToLike}
       />
       <br /> */}
-      <Carousel />
+      {/* <Carousel /> */}
       {/* <Form /> */}
       {/* <Accordions /> */}
-      {/* <Form2 /> */}
+      {/* <RegisterForm /> */}
+      <LoginForm />
     </div>
 
       // <PlayList />
