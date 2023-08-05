@@ -7,7 +7,7 @@ import Tabs from './tab'
 function Accordions(props) {
     return (
         <div>
-          <h1>BUTTON TABS</h1>
+          <h1 className="button-tabs">BUTTON TABS</h1>
       <Tabs />
         </div>
     );

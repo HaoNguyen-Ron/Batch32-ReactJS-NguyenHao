@@ -15,7 +15,7 @@ function List({musics,onSelectMuics, selectedId, onLikedMusic, selectedHeart}) {
     //  };
   return (
     <div className="leftside">
-        <div className="info">
+        <div className="info d-flex flex-column justify-content-start">
             <h1>Most popular</h1>
 
             <p>92 songs</p>

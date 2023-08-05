@@ -67,7 +67,7 @@ export default function Play({ title, artist, image, file, id, onPrev, onNext, o
 
     return (  
         <div className="rightside d-flex">
-            <div className="info">
+            <div className="info d-flex flex-column justify-content-start">
                 <h1>Now Playing</h1>
 
                 <p>55 Items on the list</p>
