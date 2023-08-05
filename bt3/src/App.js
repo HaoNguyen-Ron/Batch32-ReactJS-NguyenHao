@@ -25,6 +25,7 @@ import NotFoundPage from 'pages/404';
 import RegisterPage from 'pages/register';
 import PlayListPage from 'pages/musicPlayer';
 import ProductListPage from 'pages/product';
+import TodoPage from 'pages/todo';
 
 import './App.css';
 
@@ -74,6 +75,8 @@ function App() { // = Home Page
           <Route path={LOCATION.CART_MANAGER} element={<CartManagerPage />} />
           <Route path={LOCATION.BUTTON_ACCORDION} element={<Accordions />} />
           <Route path={LOCATION.FORM} element={<Form />} />
+          <Route path={LOCATION.REGISTER} element={<RegisterPage />} />
+          <Route path={LOCATION.TODO} element={<TodoPage />} />
         </Route>
         <Route index path={LOCATION.LOGIN} element={<LoginPage />} />
 

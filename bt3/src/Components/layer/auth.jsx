@@ -9,7 +9,7 @@ import Header from './header';
     <>
       <Header />
 
-      <div className="container-lg d-flex justify-content-center my-4 flex-column">
+      <div className="container-lg d-flex justify-content-center my-4 flex-column flex-wrap">
         <Outlet />
       </div>
     </>

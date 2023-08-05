@@ -16,6 +16,8 @@ export const LOCATION = {
   BUTTON_ACCORDION: "/button-accordion",
   FORM: "/form",
   DEMO: "/demo",
+  TODO:"/todo"
+  
 };
 
 export const NON_AUTH = [
@@ -32,30 +34,38 @@ export const NON_AUTH = [
 export const AUTH = [
   {
     path: LOCATION.IMAGE,
-    title: "Hình ảnh",
+    title: "Carousel",
   },
   {
     path: LOCATION.PRODUCT,
-    title: "Sản phẩm",
+    title: "Products",
   },
   {
     path: LOCATION.PLAY_LIST,
-    title: "Bài hát",
+    title: "MP3 Player",
   },
   {
     path: LOCATION.CART_EMPLOYEE,
-    title: "Nhân viên",
+    title: "Employee",
   },
   {
     path: LOCATION.CART_MANAGER,
-    title: "Quản lý",
+    title: "Manager",
   },
   {
     path: LOCATION.BUTTON_ACCORDION,
-    title: "Thẻ",
+    title: "Accordion",
   },
   {
     path: LOCATION.FORM,
     title: "Form",
+  },
+  {
+    path: LOCATION.REGISTER,
+    title: "Create new account",
+  },
+  {
+    path: LOCATION.TODO,
+    title: "Todo App",
   },
 ]
