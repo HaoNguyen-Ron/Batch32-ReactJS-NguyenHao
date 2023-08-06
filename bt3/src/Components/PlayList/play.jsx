@@ -113,9 +113,7 @@ export default function Play({ title, artist, image, file, id, onPrev, onNext, o
                 </div>
 
                 <div className="control-button d-flex">
-                    <div>
-                    <i className="fa-solid fa-xmark" />
-                    </div>
+
 
                     <div>
                         <i className="fa-solid fa-backward" onClick={onPrev}/>
@@ -133,9 +131,6 @@ export default function Play({ title, artist, image, file, id, onPrev, onNext, o
                     <i className="fa-solid fa-forward" onClick={onNext} />
                     </div>
 
-                    <div>
-                    <i className="fa-solid fa-arrow-rotate-left" />
-                    </div>
                 </div>
             </div>
         </div>

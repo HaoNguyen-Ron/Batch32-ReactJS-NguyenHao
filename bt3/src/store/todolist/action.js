@@ -1,7 +1,13 @@
 import * as ActionTypes from './actionTypes';
 
-export const addMissionAction = (mission) => ({
+export const addMissionAction = () => ({
     type: ActionTypes.ADD_MISSION,
-    payload: mission, // PARAMETE
-}
-)
+})
+export const addMissionSuccessAction = (mission) => ({
+    type: ActionTypes.ADD_MISSION_SUCCESS, // ACTION TYPE
+    payload: mission, // PARAMETER
+});
+
+export const addMissionFailedAction = () => ({
+    type: ActionTypes.ADD_MISSION_FAILED, // ACTION TYPE
+});
