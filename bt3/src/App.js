@@ -2,13 +2,13 @@ import React, { useEffect } from 'react';
 import { Route, Routes, useNavigate } from 'react-router';
 import { DEFAULT, LOCATION } from 'constants/index';
 import { axiosClient } from 'helper/axiosClient';
-// import LoginForm from 'Components/Form-Exercise/loginForm';
+import LoginForm from 'Components/Form-Exercise/loginForm';
 // import CardList from 'Components/cardList';
 // import PlayList from './Components/PlayList';
 // import LikeButton from 'Components/Like button';
 // import Carousel from 'Components/Carousel';
 // import Form from 'Components/Form';
-// import Form2 from 'Components/Form-Exercise';
+import RegisterForm from 'Components/Form-Exercise';
 // import Accordions from 'Components/Accordion';
 
 import Accordions from 'Components/Accordion';
@@ -30,17 +30,17 @@ import TodoPage from 'pages/todo';
 import './App.css';
 
 function App() { // = Home Page
-  const navigate = useNavigate();
+  // const navigate = useNavigate();
 
-  const token = window.localStorage.getItem(DEFAULT.TOKEN);
+  // const token = window.localStorage.getItem(DEFAULT.TOKEN);
 
-  useEffect(() => {
-    if (token) {
-      axiosClient.defaults.headers.Authorization = `Bearer ${token}`;
-    } else {
-      navigate(LOCATION.LOGIN);
-    }
-  }, [navigate, token]);
+  // useEffect(() => {
+  //   if (token) {
+  //     axiosClient.defaults.headers.Authorization = `Bearer ${token}`;
+  //   } else {
+  //     navigate(LOCATION.LOGIN);
+  //   }
+  // }, [navigate, token]);
   return (
     <>
 
@@ -54,8 +54,8 @@ function App() { // = Home Page
       {/* <Carousel /> */}
       {/* <Form /> */}
       {/* <Accordions /> */}
-      {/* <RegisterForm /> */}
-      {/* <LoginForm /> */}
+      {/* <RegisterForm />
+      <LoginForm /> */}
       {/* <CardList /> */}
       {/* <PlayList /> */}
 
