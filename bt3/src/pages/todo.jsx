@@ -1,6 +1,6 @@
 
-import Add from "Components/Todo/addMission";
-import List from "Components/Todo/listMission";
+import Add from "Components/todo/addMission";
+import List from "Components/todo/listMission";
 
 const TodoPage = () => {
     return ( 
