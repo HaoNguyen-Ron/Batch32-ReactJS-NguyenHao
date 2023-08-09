@@ -30,7 +30,8 @@ function ListItem({ id, content, classes, isHiddenButton = false, isChecked }) {
 
   const loadingDelete = useSelector((state) => state.todoReducer.loadingDelete);
   const loadingUpdate = useSelector((state) => state.todoReducer.loadingUpdate);
-
+  const missions = useSelector((state) => state.todoReducer.missions);
+  console.log(missions);
 
 
   const onDeleteMission = () => {
@@ -72,13 +73,16 @@ function ListItem({ id, content, classes, isHiddenButton = false, isChecked }) {
   return (
     <div className='d-flex align-items-center justify-content-center my-2'>
       {/* CHECKBOX */}
-      
-      <input
-        className="form-check-input me-2"
-        type="checkbox"
-        onChange={onSelectMission}
-        checked={isChecked}
-      />
+
+      {
+        missions.length === 0 ? '' :
+          <input
+            className="form-check-input me-2"
+            type="checkbox"
+            onChange={onSelectMission}
+            checked={isChecked}
+          />
+      }
 
       <div className="input-group">
         <input
@@ -92,9 +96,9 @@ function ListItem({ id, content, classes, isHiddenButton = false, isChecked }) {
           onKeyDown={onKeyDown}
         />
         {!isHiddenButton &&
-
           <div className="input-group-append">
 
+            {/* BUTTON DELETE */}
             <button className="btn btn-outline-danger" type="button" id="button-addon2" disabled={loadingDelete.includes(id)} onClick={onDeleteMission}>
               {
                 loadingDelete.includes(id) ? <Loading /> :
