@@ -38,3 +38,21 @@ export const updateMissionSuccessAction = (payload) => ({
 export const updateMissionFailedAction = () => ({
     type: ActionTypes.UPDATE_MISSION_FAILED,
 })
+
+//CHECK AND DELETE
+export const checkMissionAction = (payload) => ({
+    type: ActionTypes.CHECKED_MISSION, // ACTION TYPE
+    payload,
+});
+
+export const checkAllMissionAction = () => ({
+    type: ActionTypes.CHECKED_ALL_MISSION, // ACTION TYPE
+});
+
+export const deleteSelectedMissionAction = () => ({
+    type: ActionTypes.DELETE_SELECTED_MISSION, // ACTION TYPE
+});
+
+export const deleteSelectedMissionSuccessAction = () => ({
+    type: ActionTypes.DELETE_SELECTED_MISSION_SUCCESS, // ACTION TYPE
+});
