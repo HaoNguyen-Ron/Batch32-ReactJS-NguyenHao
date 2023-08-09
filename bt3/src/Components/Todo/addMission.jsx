@@ -1,7 +1,7 @@
 import Loading from "Components/Loading";
 import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { addMissionAction, addMissionSuccessAction } from "store/todolist/action";
+import { addMissionAction, addMissionSuccessAction } from "store/todo/action";
 
 const Add = () => {
     const [mission, setMission] = useState('');
@@ -37,8 +37,13 @@ const Add = () => {
                 value={mission}
                 onChange={onChange}
                 onKeyDown={onKeyDown}
+                disabled={isLoadingAdd}
             />
-            <button className="btn btn-outline-primary d-flex justify-content-center align-items-center" type="button" onClick={onAddMission} disabled={!mission || isLoadingAdd}>
+            <button 
+                className="btn btn-outline-primary d-flex justify-content-center align-items-center"
+                type="button"
+                onClick={onAddMission}
+                disabled={!mission || isLoadingAdd}>
                 {
                     isLoadingAdd ? <Loading /> : <i className="fa-solid fa-plus" />
                 }

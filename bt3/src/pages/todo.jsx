@@ -1,14 +1,8 @@
 
-import Add from "Components/Todo/addMission";
-import List from "Components/Todo/listMission";
+import ToDoApp from "Components/Todo/todoapp";
+import 'Components/Todo/todoapp'
 
-const TodoPage = () => {
-    return ( 
-        <>
-            <Add />
-            <List/>
-        </>
-     );
-}
- 
+
+const TodoPage = () => <ToDoApp />
+
 export default TodoPage;

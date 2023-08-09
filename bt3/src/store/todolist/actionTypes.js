@@ -1,4 +1,0 @@
-//add
-export const ADD_MISSION = 'ADD_MISSION';
-export const ADD_MISSION_SUCCESS = 'ADD_MISSION_SUCCESS';
-export const ADD_MISSION_FAILED = 'ADD_MISSION_FAILED';
