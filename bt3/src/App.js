@@ -1,16 +1,14 @@
-// import React, { useEffect } from 'react';
-// import { Route, Routes, useNavigate } from 'react-router';
-// import { DEFAULT, LOCATION } from 'constants/index';
-// import { axiosClient } from 'helper/axiosClient';
-// // import LoginForm from 'Components/Form-Exercise/loginForm';
-// // import CardList from 'Components/cardList';
-// // import PlayList from './Components/PlayList';
-// // import LikeButton from 'Components/Like button';
-// // import Carousel from 'Components/Carousel';
-// // import Form from 'Components/Form';
-// // import Form2 from 'Components/Form-Exercise';
-// // import Accordions from 'Components/Accordion';
-
+import React, { useEffect } from 'react';
+import { Route, Routes, useNavigate } from 'react-router';
+import { DEFAULT, LOCATION } from 'constants/index';
+import { axiosClient } from 'helper/axiosClient';
+// import LoginForm from 'Components/Form-Exercise/loginForm';
+// import CardList from 'Components/cardList';
+// import PlayList from './Components/PlayList';
+// import LikeButton from 'Components/Like button';
+// import Carousel from 'Components/Carousel';
+// import Form from 'Components/Form';
+// import Form2 from 'Components/Form-Exercise';
 // import Accordions from 'Components/Accordion';
 // import AuthLayout from 'Components/layer/auth';
 // import Form from 'Components/Form-Class';
@@ -54,8 +52,8 @@ function App() { // = Home Page
       {/* <Carousel /> */}
       {/* <Form /> */}
       {/* <Accordions /> */}
-      {/* <RegisterForm /> */}
-      {/* <LoginForm /> */}
+      {/* <RegisterForm />
+      <LoginForm /> */}
       {/* <CardList /> */}
       {/* <PlayList /> */}
 

@@ -2,6 +2,12 @@ import Action from "./action";
 import Add from "./addMission";
 import List from "./listMission";
 
+<<<<<<< HEAD
+=======
+import './todo.css'
+
+
+>>>>>>> 9d4dc8fdc676295919fb69f951c6f8ef0b83641b
 const ToDoApp = () => {
     return (
 
