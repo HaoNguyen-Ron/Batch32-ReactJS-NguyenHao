@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useRef, useState } from 'react';
 import List from './list';
 import Play from './play';
 
@@ -154,7 +154,7 @@ function PlayList(props) {
                     file={selectedMusic.file}
                     onNext={onNext} 
                     onPrev={onPrev}
-                    
+                    onSelectMuics={onSelectMuics}
                 />
             </div>
         </div>
