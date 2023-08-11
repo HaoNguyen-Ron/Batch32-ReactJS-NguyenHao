@@ -8,7 +8,7 @@ import React, { useCallback, useEffect, useRef, useState } from 'react';
 import './music.css';
 
 
-export default function Play({ title, artist, image, file, id, onPrev, onNext, onNextMusic }) {
+export default function Play({ title, artist, image, file, id, onPrev, onNext, onNextMusic, onSelectMuics }) {
 
     const [isPlaying, setIsPlaying] = useState(false);
 
@@ -20,7 +20,7 @@ export default function Play({ title, artist, image, file, id, onPrev, onNext, o
 
     useEffect(() => {
         setIsPlaying(false);
-    }, [id]);
+    }, [id, onSelectMuics]);
 
     const onUpdateTimer = useCallback(() => {
         setTimer(audioRef.current.currentTime);

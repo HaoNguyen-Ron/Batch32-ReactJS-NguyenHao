@@ -14,6 +14,18 @@
     font-size: 25px;
   }
   
+  .song-title h3{
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+  }
+  .song-title p{
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+  }
   
   /* disc part */
   .playingsong {
